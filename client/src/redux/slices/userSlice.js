@@ -4,13 +4,17 @@ const userSlice = createSlice({
   name: "user",
   initialState: {
     userData: null,
+    token: localStorage.getItem("token") || null,
   },
   reducers: {
     setUserData: (state, action) => {
-      state.currentUser = action.payload;
+      state.userData = action.payload;
+    },
+    setToken: (state, action) => {
+      state.token = action.payload;
     },
   },
 });
 
-export const { setUserData } = userSlice.actions;
+export const { setUserData, setToken } = userSlice.actions;
 export default userSlice.reducer;

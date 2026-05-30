@@ -3,10 +3,14 @@ import Home from "./pages/Home";
 import RegisterUser from "./pages/RegisterUser";
 import LoginUser from "./pages/LoginUser";
 import { useSelector } from "react-redux";
+import { Toaster } from "react-hot-toast";
+import useFetchCurrentUser from "./utils/useFetchCurrentUser";
 const App = () => {
+  useFetchCurrentUser();
   const { userData } = useSelector((state) => state.user);
   return (
     <>
+      <Toaster />
       <Routes>
         <Route path="/" element={userData ? <Home /> : <LoginUser />} />
         <Route
