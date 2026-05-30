@@ -23,7 +23,7 @@ export const adminLogin = async (req, res) => {
         .json({ success: false, message: "All fields are required" });
     }
     if (
-      email !== process.env.ADMIN_EMAIL &&
+      email !== process.env.ADMIN_EMAIL ||
       password !== process.env.ADMIN_PASSWORD
     ) {
       return res
