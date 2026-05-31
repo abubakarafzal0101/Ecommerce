@@ -18,6 +18,6 @@ adminRouter.get("/test", adminAuth, testAdmin);
 adminRouter.post("/add-product", adminAuth, upload.single("image"), addProduct);
 adminRouter.delete("/delete-product/:productId", adminAuth, deleteProduct);
 adminRouter.get("/get-all-products", getAllProducts);
-adminRouter.get("/get-single-product", getSingleProduct);
+adminRouter.get("/get-single-product/:productId", getSingleProduct);
 
 export default adminRouter;
